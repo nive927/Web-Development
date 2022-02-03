@@ -1,0 +1,11 @@
+body{
+  margin: auto;
+  background-color: lightblue;
+  /* background-image: url('ssnbg.jpg');
+  background-size: 50% 50%;
+  background-origin: border-box
+  background-repeat: no-repeat */
+}
+h1{
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="button">Get Text File</button>
+  <br><br>
+  <div id="text"></div>
+
+  <script>
+    // Create event listener
+    document.getElementById("button").addEventListener("click", loadText);
+
+function loadText() {
+	//create XMLHTTPReq Obj
+  var xhttp = new XMLHttpRequest();
+  console.log(xhttp);
+  //open -type,url/file,asyn
+  xhttp.open("GET","Server/AjaxDemo1.txt",true);
+  console.log("Ready State", xhttp.readyState);
+
+    //xhttp.onload = function() {
+    	//console.log("Ready State", xhttp.readyState);
+    //if (this.readyState == 4 && this.status == 200) {
+    //console.log(this.responseText);
+    //}
+  //};
+
+xhttp.onprogress=function()
+  {
+  	console.log("On Progress State", xhttp.readyState);
+  }
+
+  xhttp.onreadystatechange=function()
+  //xhttp.onload=function()
+  {		setTimeout(()=>{
+	console.log('End of Timeout function execution');
+},2500);
+		console.log('READYSTATE: ', xhttp.readyState);
+        if(this.status == 200)
+        {
+          //console.log(this.responseText);
+          document.getElementById('text').innerHTML = this.responseText;
+        } 
+        else if(this.status = 404)
+        {
+          document.getElementById('text').innerHTML = 'Not Found';
+        }
+  }
+  
+  
+
+  xhttp.onerror=function()
+  {
+  	console.log("Request Error");
+  }
+
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>

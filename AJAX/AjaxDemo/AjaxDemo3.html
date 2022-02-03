@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Nive D is trying Asynchronous demo in AJAX</h1>
+<button id="button">AsyncDemo in Ajax</button>
+<script>
+document.getElementById("button").addEventListener("click", loadConsole);
+
+function loadConsole() {
+
+console.log(5);
+console.log(6);
+setTimeout(()=>{
+	console.log('callback function fired');
+},2500);
+
+console.log(7);
+console.log(8);
+}
+</script>
+
+</body>
+</html>
+

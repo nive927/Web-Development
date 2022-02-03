@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>IPL LIVE SCORE</title>
+  </head>
+  <link rel="stylesheet" href="style.css">
+
+  <body>
+    <h1>IPL LIVE SCORE</h1>
+    <h2>SCORE : </h2>
+    <h2>
+    <div id="match">
+    </div>
+    <br>
+    <div id="teamone">
+    </div>
+    <br>
+    <div id="teamtwo">
+    </div>
+    </h2>
+    <button type="button" name="button" id="button">GET SCORE</button>
+  </body>
+  <script>
+
+  document.getElementById('button').addEventListener('click',loadScore);
+
+  function loadScore(){
+    var xhttp = new XMLHttpRequest();
+    console.log(xhttp);
+
+    // xhttp.open("GET","Server/score.txt",true);
+    xhttp.open("GET", "https://cricket-api.vercel.app/cri.php?url=https://www.cricbuzz.com/live-cricket-scores/35712/mi-vs-csk-27th-match-ipl-2021");
+    console.log("Ready State",xhttp.readyState);
+
+    xhttp.onprogress=function()
+    {
+      console.log("On Progress State",xhttp.readyState);
+    }
+
+    xhttp.onreadystatechange=function(){
+      console.log('Ready State:',xhttp.readyState);
+      var data = xhttp.responseText;
+      var j = JSON.parse(xhttp.responseText);
+      console.log("Data");
+      console.log(j)
+      console.log(j["livescore"]["teamone"])
+      // document.getElementById('scores').innerHTML = this.responseText;
+      document.getElementById('match').innerHTML = j["livescore"]["title"]
+      document.getElementById('teamone').innerHTML = j["livescore"]["teamone"]
+      document.getElementById('teamtwo').innerHTML = j["livescore"]["teamtwo"]
+    }
+
+    xhttp.onerror=function()
+    {
+      console.log("Request Error : ");
+    }
+    xhttp.send();
+  }
+  </script>
+</html>
