@@ -1,0 +1,26 @@
+<web-app>
+
+<servlet>
+
+	<init-param>
+		<param-name>user1</param-name>
+		<param-value>Nive</param-value>
+	</init-param>
+
+	<init-param>
+		<param-name>user2</param-name>
+		<param-value>Diana</param-value>
+	</init-param>
+
+	<servlet-name>SessionServlet</servlet-name>
+	<servlet-class>SessionServlet.SessServ</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>SessionServlet</servlet-name>
+	<url-pattern>/sessiontrial</url-pattern>
+</servlet-mapping>
+
+
+</web-app>
