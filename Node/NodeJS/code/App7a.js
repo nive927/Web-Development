@@ -1,0 +1,11 @@
+var calc = require('./Calc7b.js')
+var sq = require('./Square9.js')
+
+addresult = calc.add(4,5)
+subresult = calc.sub(10,3)
+res_area = sq.area(3)
+res_perimeter = sq.perimeter(5)
+console.log("The ADD result is "+addresult)
+console.log("The SUB result is "+subresult)
+console.log("The AREA is "+res_area)
+console.log("The PERIMETER is "+res_perimeter)
