@@ -1,0 +1,33 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>s1</servlet-name>
+		<servlet-class>CookieServlet.FirstServ</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s1</servlet-name>
+		<url-pattern>/servlet1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>s2</servlet-name>
+		<servlet-class>CookieServlet.SecondServ</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>s2</servlet-name>
+		<url-pattern>/servlet2</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ReadingCookiesExample</servlet-name>
+		<servlet-class>CookieServlet2.ReadCookies</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ReadingCookiesExample</servlet-name>
+		<url-pattern>/readcookies</url-pattern>
+	</servlet-mapping>	
+
+</web-app>
