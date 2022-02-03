@@ -1,0 +1,23 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>hs1</servlet-name>
+		<servlet-class>HServlet.FirstServ</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>hs1</servlet-name>
+		<url-pattern>/hservlet1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hs2</servlet-name>
+		<servlet-class>HServlet.SecondServ</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>hs2</servlet-name>
+		<url-pattern>/hservlet2</url-pattern>
+	</servlet-mapping>
+
+</web-app>
